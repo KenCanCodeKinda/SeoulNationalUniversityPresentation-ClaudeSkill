@@ -263,3 +263,187 @@ All corrections verified against actual template file:
 
 The skill now accurately reflects the ACTUAL template design and will create presentations that look exactly like the SNU academic style.
 
+# SNU Skill - FINAL UPDATE: Logo, Footer & Slide Numbers
+
+## Critical Missing Elements Now Added
+
+### 1. SNU Logo (TOP RIGHT) ⭐
+**What was missing:** No mention of the official SNU logo
+**Now added:**
+- Position: (12.01", 0.27")
+- Size: 1.04" x 1.01"
+- File: `assets/snu_logo.png` (extracted from template)
+- Instructions for adding logo programmatically
+
+### 2. Footer Bars (BOTTOM) ⭐
+**What was missing:** Two-bar footer structure at bottom of title slide
+**Now added:**
+- **Gray Bar**: Position (0.0", 7.03"), Size 13.33" x 0.08", Color #888888
+- **Blue Bar**: Position (0.0", 7.1"), Size 13.33" x 0.4", Color #0f0f70
+- Both span full slide width
+- Code examples for creating bars
+
+### 3. Slide Numbers (BOTTOM RIGHT) ⭐
+**What was missing:** Slide number placeholder on content slides
+**Now added:**
+- Position: (10.23", 7.19")
+- Size: 2.92" x 0.31"
+- Uses "‹#›" placeholder for auto-numbering
+- White text on footer background
+
+## Complete Title Slide Structure
+
+```
+┌─────────────────────────────────────────┐
+│ Class Name                    [SNU LOGO]│ ← Logo at (12.01", 0.27")
+│ █                                        │ ← Blue vertical bar
+│ │                                        │
+│ │  Main Presentation Title               │
+│ │                                        │
+│ Email: you@snu.ac.kr      Author (Degree)│
+│                               2025.00.00 │
+├─────────────────────────────────────────┤
+│ ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓ │ ← Gray bar (0.08" tall)
+│ ████████████████████████████████████████ │ ← Blue bar (0.4" tall)
+└─────────────────────────────────────────┘
+```
+
+## Complete Content Slide Structure
+
+```
+┌─────────────────────────────────────────┐
+│  01   Introduction                      │ ← Section # (LEFT!)
+│  ──────────────────────────────────────  │
+│                                          │
+│  • Content...                            │
+│  • More content...                       │
+│                                          │
+│  [Gray hypothesis box]              2   │ ← Slide # (bottom right)
+└─────────────────────────────────────────┘
+```
+
+## New Files Added
+
+1. **assets/snu_logo.png**
+   - Extracted from original template
+   - Official SNU logo
+   - Ready to use in presentations
+
+## Updated Code Examples
+
+### Adding Logo to Title Slide
+```python
+from pptx.util import Inches
+
+logo = slide.shapes.add_picture(
+    'assets/snu_logo.png',
+    Inches(12.01), Inches(0.27),  # Top right
+    Inches(1.04), Inches(1.01)     # Size
+)
+```
+
+### Adding Footer Bars
+```python
+from pptx.enum.shapes import MSO_SHAPE
+from pptx.util import Inches
+from pptx.dml.color import RGBColor
+
+# Gray bar (top layer)
+gray_bar = slide.shapes.add_shape(
+    MSO_SHAPE.RECTANGLE,
+    Inches(0), Inches(7.03),      # Position
+    Inches(13.33), Inches(0.08)   # Full width, thin
+)
+gray_bar.fill.solid()
+gray_bar.fill.fore_color.rgb = RGBColor(0x88, 0x88, 0x88)
+gray_bar.line.fill.background()
+
+# Blue bar (bottom layer)
+blue_bar = slide.shapes.add_shape(
+    MSO_SHAPE.RECTANGLE,
+    Inches(0), Inches(7.1),       # Position
+    Inches(13.33), Inches(0.4)    # Full width, thick
+)
+blue_bar.fill.solid()
+blue_bar.fill.fore_color.rgb = RGBColor(0x0f, 0x0f, 0x70)
+blue_bar.line.fill.background()
+```
+
+## Updated Quality Checklist
+
+Now includes:
+- [x] SNU logo included in top right corner of title slide
+- [x] Footer bars present (gray and blue) on title slide
+- [x] Slide numbers included on content slides (bottom right)
+- [x] Email field included on title slide
+- [x] Section numbering in TOP LEFT (not right!)
+- [x] Emphasis boxes use GRAY (#898c8e), not blue
+
+## All Elements Now Documented
+
+### Title Slide Elements (Complete):
+1. ✅ Class/Conference name (top left, blue text)
+2. ✅ Blue vertical bar (left side)
+3. ✅ Main title (center, 35pt)
+4. ✅ Email (bottom left)
+5. ✅ Author info (bottom right)
+6. ✅ Date (bottom right)
+7. ✅ **SNU Logo (top right)** - NEW!
+8. ✅ **Gray footer bar** - NEW!
+9. ✅ **Blue footer bar** - NEW!
+
+### Content Slide Elements (Complete):
+1. ✅ Section number (top left, not right!)
+2. ✅ Section title (next to number)
+3. ✅ Content area
+4. ✅ Optional: Research question blue bar
+5. ✅ Optional: Gray hypothesis boxes
+6. ✅ **Slide number (bottom right)** - NEW!
+
+## What This Fixes
+
+**Before:** Presentations would be missing:
+- Official SNU branding (logo)
+- Professional footer structure
+- Slide numbers for navigation
+- Complete visual identity
+
+**After:** Presentations will have:
+- Complete SNU branding
+- Professional two-bar footer
+- Automatic slide numbering
+- Exact match to template design
+
+## Files Included in Package
+
+```
+snu-presentation-style/
+├── SKILL.md (updated with logo and footer instructions)
+├── references/
+│   └── design_specifications.md (updated with all elements)
+└── assets/
+    ├── snu_template.pptx (original template)
+    └── snu_logo.png (extracted logo) ← NEW!
+```
+
+## Verification
+
+All elements verified against template file:
+- `/mnt/user-data/uploads/0__서울대_발표양식_4.pptx`
+- Logo extracted: 30,910 bytes PNG
+- Footer bars measured: Gray 0.08" tall, Blue 0.4" tall
+- Slide number position: (10.23", 7.19")
+- Logo position: (12.01", 0.27")
+
+## Result
+
+The skill now includes EVERY visual element from the SNU template:
+- Branding ✅
+- Structure ✅
+- Colors ✅
+- Typography ✅
+- Decorative elements ✅
+- Navigation (slide numbers) ✅
+
+Presentations will now perfectly match the Seoul National University academic style!
+
