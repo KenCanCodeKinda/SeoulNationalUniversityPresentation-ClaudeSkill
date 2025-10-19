@@ -12,9 +12,9 @@ This is a claude skill that makes a Presentation Seoul National University style
 
 ### Example Outputs
 - Prompt: Hey Claude—I just added the “snu-presentation-style” skill. Create a 5 page slide on Coupang and how it beat other competitors in the Korean e-commerce market. Output as microsoft powerpoint please
-- Model: Sonnet 4.5, Extended-Thinking Enabled
+- Model: Haiku 4.5, Extended-Thinking NOT enabled
 
-
+<Updating Reached limit, will update at 7:00PM> 
 
 
 ### DISCLAIMERS (Licensing)
