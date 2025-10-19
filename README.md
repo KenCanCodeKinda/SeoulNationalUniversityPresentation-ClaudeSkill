@@ -11,10 +11,12 @@ This is a claude skill that makes a Presentation Seoul National University style
 <img width="1274" height="2192" alt="CleanShot 2025-10-19 at 16 23 08@2x" src="https://github.com/user-attachments/assets/18640467-c50d-474a-8909-d1f4f50b8720" />
 
 ### Example Outputs
-- Prompt: Hey Claude—I just added the “snu-presentation-style” skill. Create a 5 page slide on Coupang and how it beat other competitors in the Korean e-commerce market. Output as microsoft powerpoint please
-- Model: Haiku 4.5, Extended-Thinking NOT enabled
+- Prompt: Using "snu-presentation-style4" please make a 6 page presentation on the advantages of iphone over Android. Use pictures if you can.
+- Follw up Prompt: The text should be in navy as well, and what happened to the bulletpoints fix it please
+- Model: Sonnet 4.5, Extended-Thinking enabled
 
-<Updating Reached limit, will update at 7:00PM> 
+<img width="1364" height="1552" alt="CleanShot 2025-10-19 at 20 09 15@2x" src="https://github.com/user-attachments/assets/1a635e31-b04d-4a06-84f9-8fd1f7b775ff" />
+
 
 
 ### DISCLAIMERS (Licensing)
